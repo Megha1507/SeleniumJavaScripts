@@ -25,9 +25,7 @@ public class flipkart {
 		
 		driver.getTitle();
 		driver.close();
-		 String baseUrl = "http://demo.guru99.com/test/newtours/";
-	        String expectedTitle = "Welcome: Mercury Tours";
-	        String actualTitle = ""
+		
 
 	}
 
