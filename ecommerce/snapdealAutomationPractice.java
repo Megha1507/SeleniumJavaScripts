@@ -2,18 +2,11 @@ package selenium_proj1;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -23,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 
-public class amazon_userInput {
+public class SnapdealAutomationPractice {
 	
 	public static void main(String[] args) {
 		
@@ -38,8 +31,6 @@ public class amazon_userInput {
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-	
-	// Saves the Users Input
 		
 		driver.get("https://www.snapdeal.com/");
 		driver.manage().window().maximize();
@@ -73,7 +64,7 @@ public class amazon_userInput {
 			System.out.println(e.getText());
 			al.add(e.getText());
 			}
-		File file = new File("D:\\were.xlsx");
+		File file = new File("D:\\writeExcel.xlsx");
 		
 		FileInputStream fis = new FileInputStream(file);
 		
@@ -81,7 +72,7 @@ public class amazon_userInput {
 		
 		XSSFSheet Sheet1 = wb.getSheetAt(0);
 		
-		Row row;
+		//Row row;
 		for(int i = 0; i< al.size() ; i++ )
 		{
 			
@@ -92,8 +83,8 @@ public class amazon_userInput {
 		wb.write(fout);
 		fout.close(); 
 		
+		}wb.close();
 		}
-				}
 	  catch (Exception e) 
 	  {
 	   // TODO Auto-generated catch block
